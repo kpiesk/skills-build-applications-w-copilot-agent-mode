@@ -11,8 +11,7 @@ const connectDB = async () => {
         console.log('Connected to octofit_db');
     }
     catch (error) {
-        console.error('Error connecting to octofit_db:', error);
-        process.exit(1);
+        console.warn('MongoDB connection unavailable; continuing without database:', error);
     }
 };
 exports.default = connectDB;
